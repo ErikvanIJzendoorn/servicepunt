@@ -48,7 +48,7 @@
 
 				<form class="col s12" method="post" style="text-align:left; width: 300px;">
 
-				<h5 class="green-text text-accent-4 unselectable">Inloggen</h5>
+				<h5 class="orange-text text-accent-4 unselectable">Inloggen</h5>
 					<div class='row'>
 						<div class='col s12'>
 						</div>
@@ -73,7 +73,7 @@
 
 					<center>
 						<div class='row'>
-							<button type='submit' name='btn_login' class='col s12 btn btn-large waves-effect green accent-4 unselectable'>Login</button>
+							<button type='submit' name='btn_login' class='col s12 btn btn-large waves-effect orange accent-4 unselectable'>Login</button>
 						</div>
 					</center>
 				</form>
