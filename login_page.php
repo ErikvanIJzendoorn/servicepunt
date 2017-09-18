@@ -1,18 +1,3 @@
-<?php
-	if(isset($_POST['email']) && isset($_POST['password'])){
-		if($_POST['email'] !='' && $_POST['password'] != ''){
-			require_once('includes/db_connections/db_connections.php');
-			$data = getUserData();
-			foreach($data as $response){
-				echo "<br /><br />";
-				if($_POST['email'] == $response['email'] && $_POST['password'] == $response['password']){
-					header("Location: overview.php");
-					exit();
-				}
-			}
-		}
-	}
-?>
 <html lang="en">
 	<head>
 		<meta charset="utf-8">
@@ -66,9 +51,6 @@
 							<input class='validate' type='password' name='password' id='password' />
 							<label class='unselectable' for='password'>Wachtwoord</label>
 						</div>
-						<!-- <label style='float: right;'>
-							<a class='red-text text-accent-4 unselectable' href='#!'><b>Forgot Password?</b></a>
-						</label> -->
 					</div>
 
 					<center>
