@@ -2,8 +2,8 @@
 require '../includes/database/connect.php';
 
 //-- Save datastring into variables --// 
-$wachtwoord = $_POST['password'];
-$gebruikersnaam = $_POST['username'];
+$pass = $_POST['password'];
+$user = $_POST['username'];
 
 // ----------------------------- Main Script ---------------------------\
 try{
@@ -14,16 +14,26 @@ try{
     
     $stmt->execute();
 
-    $result = $stmt->fetch(PDO::FETCH_ASSOC);
-    if(empty($result)) {
-        echo ("Failed");
-        $conn = null;
+    while($row = $stmt->fetch(PDO::FETCH_ASSOC))
+    {
+        if($row['gebruikersnaam'] == $pass && $row['wachtwoord'] == $user) {
+            if($row['beheerder'] == 1)
+            {
+                header("Location: http://localhost/servicepunt/includes/beheerder/overview.php");
+            }
+            else{
+                header("Location: http://localhost/servicepunt/includes/werknemer/overview.php");
+            }
+           
 
-    }else{
-        header("Location: http://localhost/servicepunt/includes/werknemer/overview.php");
-        $conn = null;
+            $conn = null;
+        }else{
+            echo ("Failed");
+            $conn = null;
+        }
     }
-}catch(Exception $e) {
+}
+catch(Exception $e) {
     echo ($e);
 }
 
