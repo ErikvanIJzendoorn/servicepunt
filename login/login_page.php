@@ -17,7 +17,7 @@
 		<center>
 		<div class='row'>
 	        <div class="z-depth-1 grey lighten-4 row formWrap">
-                <form class="col s12 formDiv" method="post">
+                <form class="col s12 formDiv" method="post" action="login.php">
 
                 <h5 class="col s12 orange-text text-accent-4 unselectable">Inloggen</h5>
 
