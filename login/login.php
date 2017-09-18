@@ -20,7 +20,7 @@ try{
         $conn = null;
 
     }else{
-        header("Location: http://")
+        header("Location: http://localhost/servicepunt/includes/werknemer/overview.php");
         $conn = null;
     }
 }catch(Exception $e) {
