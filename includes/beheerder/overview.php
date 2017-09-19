@@ -12,25 +12,17 @@
 	</head>
 
 <body>
-<<<<<<< HEAD
 	<div class="section"></div>
 	<header>
-		<ul id="nav-mobile" class="side-nav fixed orange accent-4 white-text" style="width: 12.5%">
+		<ul id="nav-mobile" class="side-nav fixed orange accent-4 white-text" style="width: 15%">
 	        <li class="bold"><a href="http://localhost/SCHOOL/servicepunt/includes/beheerder/overview.php" class="waves-effect waves-light white-text active">Overzicht</a></li>
 	        <li class="bold"><a href="http://localhost/SCHOOL/servicepunt/includes/beheerder/toevoegen.php" class="waves-effect waves-light white-text">Producten toevoegen</a></li>
 	        <li class="bold"><a href="http://localhost/SCHOOL/servicepunt/includes/beheerder/verwijderen.php" class="waves-effect waves-light white-text">Producten verwijderen</a></li>
     	</ul>
 	</header>	
 	<main>
+		
 	</main>
-=======
-	<main>
-		<ul id="nav-mobile" class="side-nav fixed orange accent-4 white-text" style="overflow: auto; transform: translateX(0%);">
-	        <li class="bold"><a href="" class="white-text">Overzicht</a></li>
-	        <li class="bold"><a href="" class="white-text">Reserveren</a></li>
-	        <li class="bold"><a href="" class="white-text">Inleveren</a></li>
-    	</ul>
-	</main>	
->>>>>>> ce319fbee14b7a2bc66988d70a3f441898757071
+	
 </body>
 </html>

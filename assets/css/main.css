@@ -2,10 +2,7 @@ body{
 	background-color: #424242;
 }
 
-.navbar{
-	overflow: auto; 
-	transform: translateX(0%);
-}
+
 
 .mooi{
 	background-color: white;
