@@ -9,14 +9,10 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 		<link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 		<script rel="register_modal" src="../../assets/js/register_info.js"></script>
- 		<style>
-			body{
-				background-color: #424242;
-			}
-		</style>
 	</head>
 
 <body>
+<<<<<<< HEAD
 	<div class="section"></div>
 	<header>
 		<ul id="nav-mobile" class="side-nav fixed orange accent-4 white-text" style="width: 12.5%">
@@ -27,5 +23,14 @@
 	</header>	
 	<main>
 	</main>
+=======
+	<main>
+		<ul id="nav-mobile" class="side-nav fixed orange accent-4 white-text" style="overflow: auto; transform: translateX(0%);">
+	        <li class="bold"><a href="" class="white-text">Overzicht</a></li>
+	        <li class="bold"><a href="" class="white-text">Reserveren</a></li>
+	        <li class="bold"><a href="" class="white-text">Inleveren</a></li>
+    	</ul>
+	</main>	
+>>>>>>> ce319fbee14b7a2bc66988d70a3f441898757071
 </body>
 </html>
