@@ -27,11 +27,17 @@
 		<div class="col s6 offset-s2 mooi" id="form">
 			<form method="post" action="login.php">
 				<div class="input-field col s8 offset-s2">
-				    <select multiple>
-				      <option value="" disabled selected>Choose your option</option>
-				      <option value="1">Option 1</option>
-				      <option value="2">Option 2</option>
-				      <option value="3">Option 3</option>
+				    <select>
+				        <optgroup>
+					      	<option value="1">Option 1</option>
+					      	<option value="2">Option 2</option>
+					      	<option value="3">Option 3</option>
+				        </optgroup>
+				        <optgroup>
+					      	<option value="4">Option 4</option>
+					      	<option value="5">Option 5</option>
+					      	<option value="6">Option 6</option>
+				        </optgroup>
 				    </select>
 				    <label>Materialize Multiple Select</label>
 			  </div>
