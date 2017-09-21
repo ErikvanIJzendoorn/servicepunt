@@ -1,4 +1,5 @@
 <?php
+session_start();
 require '../includes/database/connect.php';
 
 //-- Save datastring into variables --// 
@@ -22,9 +23,9 @@ try{
                 header("Location: http://localhost/servicepunt/includes/beheerder/overview.php");
             }
             else{
+                $_SESSION['username'] = $row['gebruikersnaam']; 
                 header("Location: http://localhost/servicepunt/includes/werknemer/overview.php");
             }
-           
 
             $conn = null;
         }else{

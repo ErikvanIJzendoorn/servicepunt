@@ -1,16 +1,23 @@
 <?php
+session_start();
+
+$persoon = [];
+$naam = $_POST['klantNaam'];
+$nummer = $_POST['klantNummer'];
+$borg = $_POST['klantBorg'];
+$ophaal = $_POST['klantOphaal'];
+$inlever = $_POST['klantInlever'];
+
+$persoonsGegevens = array($naam, $nummer, $borg, $ophaal, $inlever);
+array_push($persoon, $persoonsGegevens);
+
+$_SESSION['persoon'] = $persoon;
 
 try{
 
 	$select = [];
 	$aantal = [];
 	$k = 100;
-
-	$naam = $_POST['klantNaam'];
-	$nummer = $_POST['klantNummer'];
-	$borg = $_POST['klantBorg'];
-	$ophaal = $_POST['klantOphaal'];
-	$inlever = $_POST['klantInlever'];
 
 	for($i = 0; $i != 4; $i++)
 	{
@@ -51,7 +58,8 @@ try{
 		}
 	}
 	if ($succes == 4)
-		{
+		{	
+			require "reserveren.php";
 			header("Location: reserveren.php");
 			echo '4';
 		}
