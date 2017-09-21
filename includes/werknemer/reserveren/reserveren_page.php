@@ -9,6 +9,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 		<link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 		<script src="../../../assets/js/materialize.js"></script>
+		<link rel="stylesheet" href="reserveren.css">
 	</head>
 
 	<header class="col s2">
@@ -24,25 +25,70 @@
     		</ul>
 		</div>
 		
-		<div class="col s6 offset-s2 mooi" id="form">
-			<form method="post" action="login.php">
-				<div class="input-field col s8 offset-s2">
-				    <select>
-				        <optgroup>
-					      	<option value="1">Option 1</option>
-					      	<option value="2">Option 2</option>
-					      	<option value="3">Option 3</option>
-				        </optgroup>
-				        <optgroup>
-					      	<option value="4">Option 4</option>
-					      	<option value="5">Option 5</option>
-					      	<option value="6">Option 6</option>
-				        </optgroup>
-				    </select>
-				    <label>Materialize Multiple Select</label>
-			  </div>
+	<div class="col s6 offset-s2 mooi" id="form">
+		<div class="row">
+		    <form method="post" action="reservering_checken.php">
+				<?php 
+					$formSize = 4;
+					$productAantal = 100;
+					for($productNum = 0; $productNum < $formSize; $productNum+=2)
+					{	
+						$productAantal--;
+						DrawSelect($productNum, $productAantal);
+						$productAantal--;
+						DrawSelect($productNum + 1, $productAantal);
+					}
+				?>
+
+				
+				<div>
+					<div class="input-field col s6 row textField">
+			          <input placeholder="Placeholder" id="first_name" type="text" class="validate" name="klantNaam">
+			          <label for="first_name">Naam</label>
+			        </div>
+
+			        <div class="input-field col s6 row textField">
+			          <input placeholder="Placeholder" id="first_name" type="text" class="validate" name="klantNummer">
+			          <label for="first_name">Leerlingnummer</label>
+			        </div>
+
+			        <div class="input-field col s6 row textField">
+			          <input placeholder="Placeholder" id="first_name" type="text" class="validate" name="klantBorg">
+			          <label for="first_name">Borg</label>
+			        </div>
+				</div>
+				 <div class="col s12">
+					<input type="text" placeholder="Ophaaldatum" class="datepicker col s4 offset-s1" name="klantOphaal">
+					<input type="text" placeholder="Inleverdatum" class="datepicker col s4 offset-s2"  name="klantInlever">
+				</div>
+				<button class="btn waves-effect waves-light buttonMargin" type="submit" name="action">Verder
+			    	<i class="material-icons right">send</i>
+			    </button>
 			</form>
-		</div>
+		</div>	
 	</div>
+</div>
 </body>
 </html>
+
+<?php
+function DrawSelect($productNum, $productAantal)
+{	
+	print '<div class="col s6 productSelect">
+			<div class="input-field col s6">
+			    <select name="'; echo $productNum; print '">
+		';
+		    require "product_ophalen.php";
+	print '
+			    </select>
+			</div>
+
+		<div class="input-field col s2">
+			<input placeholder="Aantal" id="first_name" type="text" class="validate" name="'; echo $productAantal; print '">
+		</div>
+		</div>
+
+	';
+}
+	
+?>

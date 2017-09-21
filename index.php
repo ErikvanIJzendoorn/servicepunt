@@ -1,5 +1,5 @@
 <?php
 
-header("Location: http://localhost/SCHOOL/servicepunt/login/login_page.php");
+header("Location: http://localhost/servicepunt/login/login_page.php");
 
 ?>
