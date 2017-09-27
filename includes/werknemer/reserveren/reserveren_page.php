@@ -19,9 +19,9 @@
 	<div class="row col s12">
 		<div class="col s2">
 			<ul id="nav-mobile" class="navbar side-nav fixed orange accent-4 white-text">
-		        <li class="bold"><a href="" class="white-text">Overzicht</a></li>
+		        <li class="bold"><a href="../overview.php" class="white-text">Overzicht</a></li>
 		        <li class="bold"><a href="reserveren_page.php" class="white-text">Reserveren</a></li>
-		        <li class="bold"><a href="" class="white-text">Inleveren</a></li>
+		        <li class="bold"><a href="../inleveren/inleveren.php" class="white-text">Inleveren</a></li>
     		</ul>
 		</div>
 		

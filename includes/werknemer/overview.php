@@ -16,7 +16,7 @@
 		<ul id="nav-mobile" class="side-nav fixed grey accent-4 white-text" style="overflow: auto; transform: translateX(0%);">
 	        <li class="bold"><a href="" class="white-text">Overzicht</a></li>
 	        <li class="bold"><a href="reserveren/reserveren_page.php" class="white-text">Reserveren</a></li>
-	        <li class="bold"><a href="" class="white-text">Inleveren</a></li>
+	        <li class="bold"><a href="inleveren/inleveren.php" class="white-text">Inleveren</a></li>
     	</ul>
 	</main>	
 </body>
