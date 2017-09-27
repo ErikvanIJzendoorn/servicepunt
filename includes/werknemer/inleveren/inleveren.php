@@ -118,7 +118,7 @@
 
 	echo "<br>";
 
-	var_dump($productenId);
+	var_dump($productenId[3]);
 	echo "<br>";
 	echo "<br>";
 
@@ -126,24 +126,24 @@
 	?> 
 				<tr>
 					<td><?php echo $klantNaam; ?> </td>
-					<td><?php print $producten[$productId[0]][1]; ?></td>
+					<td><?php print $producten[$productenId[0][0] - 1][1]; ?></td>
 					<td><?php print $productenId[0][1]; ?></td>
 					<td><?php echo $klantInfo[0][2]; ?></td>
 					<td>Inleveren</td>
 				</tr>
 				<tr>
 					<td></td>
-					<td><?php print $producten[$boe][1];?></td>
+					<td><?php print $producten[$productenId[1][0] - 1][1];?></td>
 					<td><?php print $productenId[1][1]; ?></td>
 				</tr>
 				<tr>
 					<td></td>
-					<td><?php print $producten[$boe][1]; ?></td>
+					<td><?php print $producten[$productenId[2][0] - 1][1]; ?></td>
 					<td><?php print $productenId[2][1]; ?></td>
 				</tr>
 				<tr>
 					<td></td>
-					<td><?php print $producten[$boe][1]; ?></td>
+					<td><?php print $producten[$productenId[3][0] - 1][1]; ?></td>
 					<td><?php print $productenId[3][1]; ?></td>
 				</tr>
 			<?php 
