@@ -31,7 +31,6 @@
 	                </tr>
 
 <?php
-	$k = 0;
 	session_start();
 
 	require '../../../includes/database/connect.php';
@@ -55,13 +54,9 @@
 
 		$klantInf = array($id, $inleverDatum, $afhaalDatum, $klant, $werknemer);
 		array_push($klantInfo, $klantInf);
-
-
     }    
     
 	$arrayNumber = count($klantInfo);
-	echo $arrayNumber;
-
 
     for($i = 0; $i < $arrayNumber; $i++)
     {	
@@ -113,23 +108,14 @@
 			$klantNaam = $rows5['naam'];
 	    }
 
-	//var_dump($productId);
-	$boe = $productenId[$i][0];
 
-	echo "<br>";
-
-	var_dump($productenId[3]);
-	echo "<br>";
-	echo "<br>";
-
-	//var_dump($producten);
 	?> 
 				<tr>
 					<td><?php echo $klantNaam; ?> </td>
 					<td><?php print $producten[$productenId[0][0] - 1][1]; ?></td>
 					<td><?php print $productenId[0][1]; ?></td>
 					<td><?php echo $klantInfo[0][2]; ?></td>
-					<td>Inleveren</td>
+					<td><a href='delete.php?id=<?php echo $klantInfo[$i][0];?>'>Inleveren</a></td>
 				</tr>
 				<tr>
 					<td></td>
@@ -146,6 +132,8 @@
 					<td><?php print $producten[$productenId[3][0] - 1][1]; ?></td>
 					<td><?php print $productenId[3][1]; ?></td>
 				</tr>
+
+
 			<?php 
 		}
 			?>
