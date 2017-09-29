@@ -9,9 +9,15 @@ try{
     $conn -> setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
     $stmt = $conn->prepare("SELECT isActive,inleverDatum, afhaalDatum, (SELECT naam FROM klant WHERE klant.id = reservering.klant) AS naam, 
+<<<<<<< HEAD
                                 (SELECT type FROM product WHERE product.id = reservering.product_reservering) AS product, 
                                 (SELECT gebruikersnaam FROM werknemer WHERE werknemer.id = reservering.werknemer) AS werknemer, 
                                 (SELECT aantal FROM inventaris WHERE inventaris.product = reservering.product_reservering) AS aantal
+=======
+                                (SELECT type FROM product WHERE product.id = reservering.product) AS product, 
+                                (SELECT gebruikersnaam FROM werknemer WHERE werknemer.id = reservering.werknemer) AS werknemer, 
+                                (SELECT aantal FROM inventaris WHERE inventaris.product = reservering.product) AS aantal
+>>>>>>> bdc413c41859e105691d0b930b64382707a24e4b
                                 FROM reservering "
         );
     
@@ -19,7 +25,10 @@ try{
 
     while($rows = $stmt->fetch(PDO::FETCH_ASSOC))
     {
+<<<<<<< HEAD
         var_dump($rows);
+=======
+>>>>>>> bdc413c41859e105691d0b930b64382707a24e4b
         if ($rows["isActive"] == 1) {
             ?>
 
@@ -35,8 +44,11 @@ try{
             <?php
 
 
+<<<<<<< HEAD
         }else if($rows["isActive"]==0){
 
+=======
+>>>>>>> bdc413c41859e105691d0b930b64382707a24e4b
         }
        
 

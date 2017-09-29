@@ -10,6 +10,7 @@
 		<link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 	</head>
 
+<<<<<<< HEAD
 <body class="container">
 	<div class="section"></div>
 	<div class="row">
@@ -33,5 +34,15 @@
 			<?php require_once('../beheerder/overzichttabel.php'); ?>
 		</div>
 	</div>
+=======
+<body>
+	<main>
+		<ul id="nav-mobile" class="side-nav fixed grey accent-4 white-text" style="overflow: auto; transform: translateX(0%);">
+	        <li class="bold"><a href="" class="white-text">Overzicht</a></li>
+	        <li class="bold"><a href="reserveren/reserveren_page.php" class="white-text">Reserveren</a></li>
+	        <li class="bold"><a href="inleveren/inleveren.php" class="white-text">Inleveren</a></li>
+    	</ul>
+	</main>	
+>>>>>>> bdc413c41859e105691d0b930b64382707a24e4b
 </body>
 </html>

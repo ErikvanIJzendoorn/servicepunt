@@ -31,8 +31,18 @@ require "../../../includes/database/connect.php";
 try{
 	$conn = new PDO("mysql:host=".host.";dbname=".database, dbUser, dbPass);
 	$conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+<<<<<<< HEAD
 
 	$stmt = $conn->prepare("BEGIN;
+=======
+	if(empty($_SESSION['klantID']))
+	{
+		echo "Nieuwe Klant";
+
+		$stmt = $conn->prepare("BEGIN;
+							INSERT INTO `klant` (id, `naam`, `leerlingnummer`, `borg`) 
+								VALUES (:klantID, :naam, :nummer, :borg);
+>>>>>>> bdc413c41859e105691d0b930b64382707a24e4b
 							INSERT INTO product_reservering (product, reservering, aantal)
 								VALUES(:product1, :reservering1, :aantal1);
 							INSERT INTO product_reservering (product, reservering, aantal)
@@ -42,6 +52,7 @@ try{
 							INSERT INTO product_reservering (product, reservering, aantal)
 								VALUES(:product4, :reservering4, :aantal4);
 							INSERT INTO reservering (id, product_reservering, werknemer, klant, inleverDatum, afhaalDatum, isActive)
+<<<<<<< HEAD
 								VALUES(:id, :product_reservering, :werknemer, :klant, :inlever, :ophaal, 1);
 							COMMIT;
 						   ");
@@ -71,6 +82,90 @@ try{
 
 
 	$stmt->execute();
+=======
+								VALUES(:id, :product_reservering, :werknemer, :klantID, :inlever, :ophaal, 1);
+							COMMIT;
+						   ");
+
+		$stmt->bindValue(":product1", $item1);
+		$stmt->bindValue(":product2", $item2);
+		$stmt->bindValue(":product3", $item3);
+		$stmt->bindValue(":product4", $item4);
+
+		$stmt->bindValue(":aantal1", $aantal1);
+		$stmt->bindValue(":aantal2", $aantal2);
+		$stmt->bindValue(":aantal3", $aantal3);
+		$stmt->bindValue(":aantal4", $aantal4);
+
+		$stmt->bindValue(":reservering1", $_SESSION['reserveringID']);
+		$stmt->bindValue(":reservering2", $_SESSION['reserveringID']);
+		$stmt->bindValue(":reservering3", $_SESSION['reserveringID']);
+		$stmt->bindValue(":reservering4", $_SESSION['reserveringID']);
+
+		$stmt->bindValue(":id", $_SESSION['reserveringID']);
+		$stmt->bindValue(":product_reservering", $_SESSION['reserveringID']);
+		$stmt->bindValue(":werknemer", $werknemer);
+		$stmt->bindValue(":inlever", $inlever);
+		$stmt->bindValue(":ophaal", $ophaal);
+		$stmt->bindValue(":klantID", $_SESSION['klantIDAantal']);
+
+		$stmt->bindValue(":naam", $naam, PDO::PARAM_STR);
+		$stmt->bindValue(":nummer", $nummer);
+		$stmt->bindValue(":klantID", $_SESSION['klantIDAantal']);
+		$stmt->bindValue(":borg", $borg, PDO::PARAM_STR);
+		$stmt->execute();
+
+		header("Location: http://localhost/servicepunt/includes/werknemer/overview.php");
+		
+	echo " End";
+
+	} else{
+		echo "else";
+		$stmt = $conn->prepare("BEGIN;
+							INSERT INTO product_reservering (product, reservering, aantal)
+								VALUES(:product1, :reservering1, :aantal1);
+							INSERT INTO product_reservering (product, reservering, aantal)
+								VALUES(:product2, :reservering2, :aantal2);
+							INSERT INTO product_reservering (product, reservering, aantal)
+								VALUES(:product3, :reservering3, :aantal3);
+							INSERT INTO product_reservering (product, reservering, aantal)
+								VALUES(:product4, :reservering4, :aantal4);
+							INSERT INTO reservering (id, product_reservering, werknemer, klant, inleverDatum, afhaalDatum, isActive)
+								VALUES(:id, :product_reservering, :werknemer, :klantID, :inlever, :ophaal, 1);
+							COMMIT;
+						   ");
+
+		$stmt->bindValue(":product1", $item1);
+		$stmt->bindValue(":product2", $item2);
+		$stmt->bindValue(":product3", $item3);
+		$stmt->bindValue(":product4", $item4);
+
+		$stmt->bindValue(":aantal1", $aantal1);
+		$stmt->bindValue(":aantal2", $aantal2);
+		$stmt->bindValue(":aantal3", $aantal3);
+		$stmt->bindValue(":aantal4", $aantal4);
+
+		$stmt->bindValue(":reservering1", $_SESSION['reserveringID']);
+		$stmt->bindValue(":reservering2", $_SESSION['reserveringID']);
+		$stmt->bindValue(":reservering3", $_SESSION['reserveringID']);
+		$stmt->bindValue(":reservering4", $_SESSION['reserveringID']);
+
+		$stmt->bindValue(":id", $_SESSION['reserveringID']);
+		$stmt->bindValue(":product_reservering", $_SESSION['reserveringID']);
+		$stmt->bindValue(":werknemer", $werknemer);
+		$stmt->bindValue(":inlever", $inlever);
+		$stmt->bindValue(":ophaal", $ophaal);
+
+		$stmt->bindValue(":klantID", $_SESSION['klantID']);
+		$stmt->execute();
+
+		header("Location: http://localhost/servicepunt/includes/werknemer/inleveren.php");
+	}
+
+	
+	echo $_SESSION['klantID'];
+
+>>>>>>> bdc413c41859e105691d0b930b64382707a24e4b
 
 }
 catch(Exception $e) {

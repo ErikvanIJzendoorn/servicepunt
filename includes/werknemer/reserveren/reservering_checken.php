@@ -38,11 +38,23 @@ try{
 							    (
 							    SELECT id
 							    FROM klant
+<<<<<<< HEAD
 							    WHERE naam = :naam
 							    ) AS klantID
 							");
 
 	$stmt2->bindValue(":naam", $naam);
+=======
+							    WHERE leerlingnummer = :nummer
+							    ) AS klantID,
+							    (
+							    SELECT count(id)
+							    FROM klant
+							    ) AS aantalKlantID
+							");
+
+	$stmt2->bindValue(":nummer", $nummer);
+>>>>>>> bdc413c41859e105691d0b930b64382707a24e4b
 
 	$stmt2->execute();
 
@@ -50,9 +62,16 @@ try{
 	{
 		$klantID = $row2['klantID'];
 		$reserveringID = $row2['reserveringID'] + 1;
+<<<<<<< HEAD
 
 		$_SESSION['reserveringID'] = $reserveringID;
 		$_SESSION['klantID'] = $klantID;
+=======
+		$aantalKlantID = $row2['aantalKlantID'] + 1;
+		$_SESSION['reserveringID'] = $reserveringID;
+		$_SESSION['klantID'] = $klantID;
+		$_SESSION['klantIDAantal'] = $aantalKlantID;
+>>>>>>> bdc413c41859e105691d0b930b64382707a24e4b
 	}
 
 	$conn = new PDO("mysql:host=".host.";dbname=".database, dbUser, dbPass);
