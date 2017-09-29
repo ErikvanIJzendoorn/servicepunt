@@ -16,8 +16,13 @@
 		<div class="col s2">
 			<ul id="nav-mobile" class="side-nav fixed grey accent-4 white-text">
 		        <li class="bold"><a href="http://localhost/servicepunt/includes/beheerder/overview.php" class="waves-effect waves-light white-text active">Overzicht</a></li>
+<<<<<<< HEAD
+		        <li class="bold"><a href="http://localhost/servicepunt/includes/beheerder/toevoegen.php" class="waves-effect waves-light white-text">Producten toevoegen</a></li>
+		        <li class="bold"><a href="http://localhost/servicepunt/includes/beheerder/verwijderen.php" class="waves-effect waves-light white-text">Producten verwijderen</a></li>
+=======
 		        <li class="bold"><a href="http://localhost/servicepunt/includes/beheerder/toevoegen/toevoegen_page.php" class="waves-effect waves-light white-text">Producten toevoegen</a></li>
 		        <li class="bold"><a href="http://localhost/servicepunt/includes/beheerder/verwijderen/verwijderen.php" class="waves-effect waves-light white-text">Producten verwijderen</a></li>	
+>>>>>>> bdc413c41859e105691d0b930b64382707a24e4b
 	    	</ul>
 		</div>	
 		<div class="col s10">

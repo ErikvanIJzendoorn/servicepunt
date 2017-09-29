@@ -31,6 +31,10 @@ require "../../../includes/database/connect.php";
 try{
 	$conn = new PDO("mysql:host=".host.";dbname=".database, dbUser, dbPass);
 	$conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+<<<<<<< HEAD
+
+	$stmt = $conn->prepare("BEGIN;
+=======
 	if(empty($_SESSION['klantID']))
 	{
 		echo "Nieuwe Klant";
@@ -38,6 +42,7 @@ try{
 		$stmt = $conn->prepare("BEGIN;
 							INSERT INTO `klant` (id, `naam`, `leerlingnummer`, `borg`) 
 								VALUES (:klantID, :naam, :nummer, :borg);
+>>>>>>> bdc413c41859e105691d0b930b64382707a24e4b
 							INSERT INTO product_reservering (product, reservering, aantal)
 								VALUES(:product1, :reservering1, :aantal1);
 							INSERT INTO product_reservering (product, reservering, aantal)
@@ -47,6 +52,37 @@ try{
 							INSERT INTO product_reservering (product, reservering, aantal)
 								VALUES(:product4, :reservering4, :aantal4);
 							INSERT INTO reservering (id, product_reservering, werknemer, klant, inleverDatum, afhaalDatum, isActive)
+<<<<<<< HEAD
+								VALUES(:id, :product_reservering, :werknemer, :klant, :inlever, :ophaal, 1);
+							COMMIT;
+						   ");
+
+	$stmt->bindValue(":product1", $item1);
+	$stmt->bindValue(":product2", $item2);
+	$stmt->bindValue(":product3", $item3);
+	$stmt->bindValue(":product4", $item4);
+
+	$stmt->bindValue(":aantal1", $aantal1);
+	$stmt->bindValue(":aantal2", $aantal2);
+	$stmt->bindValue(":aantal3", $aantal3);
+	$stmt->bindValue(":aantal4", $aantal4);
+
+	$stmt->bindValue(":reservering1", $_SESSION['reserveringID']);
+	$stmt->bindValue(":reservering2", $_SESSION['reserveringID']);
+	$stmt->bindValue(":reservering3", $_SESSION['reserveringID']);
+	$stmt->bindValue(":reservering4", $_SESSION['reserveringID']);
+
+	$stmt->bindValue(":id", $_SESSION['reserveringID']);
+	$stmt->bindValue(":product_reservering", $_SESSION['reserveringID']);
+	$stmt->bindValue(":werknemer", $werknemer);
+	$stmt->bindValue(":inlever", $inlever);
+	$stmt->bindValue(":ophaal", $ophaal);
+
+	$stmt->bindValue(":klant", $_SESSION['klantID']);
+
+
+	$stmt->execute();
+=======
 								VALUES(:id, :product_reservering, :werknemer, :klantID, :inlever, :ophaal, 1);
 							COMMIT;
 						   ");
@@ -129,6 +165,7 @@ try{
 	
 	echo $_SESSION['klantID'];
 
+>>>>>>> bdc413c41859e105691d0b930b64382707a24e4b
 
 }
 catch(Exception $e) {
