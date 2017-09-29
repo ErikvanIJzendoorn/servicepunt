@@ -8,21 +8,30 @@
 		<script rel="materialize" src="../../assets/libs/materialize/js/materialize.min.js"></script>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 		<link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-		<script rel="register_modal" src="../../assets/js/register_info.js"></script>
 	</head>
 
-<body>
+<body class="container">
 	<div class="section"></div>
-	<header>
-		<ul id="nav-mobile" class="side-nav fixed orange accent-4 white-text" style="width: 15%">
-	        <li class="bold"><a href="http://localhost/SCHOOL/servicepunt/includes/beheerder/overview.php" class="waves-effect waves-light white-text active">Overzicht</a></li>
-	        <li class="bold"><a href="http://localhost/SCHOOL/servicepunt/includes/beheerder/toevoegen.php" class="waves-effect waves-light white-text">Producten toevoegen</a></li>
-	        <li class="bold"><a href="http://localhost/SCHOOL/servicepunt/includes/beheerder/verwijderen.php" class="waves-effect waves-light white-text">Producten verwijderen</a></li>
-    	</ul>
-	</header>	
-	<main>
-		
-	</main>
-	
+	<div class="row">
+		<div class="col s2">
+			<ul id="nav-mobile" class="side-nav fixed grey accent-4 white-text">
+		        <li class="bold"><a href="http://localhost/servicepunt/includes/beheerder/overview.php" class="waves-effect waves-light white-text active">Overzicht</a></li>
+		        <li class="bold"><a href="http://localhost/servicepunt/includes/beheerder/toevoegen.php" class="waves-effect waves-light white-text">Producten toevoegen</a></li>
+		        <li class="bold"><a href="http://localhost/servicepunt/includes/beheerder/verwijderen.php" class="waves-effect waves-light white-text">Producten verwijderen</a></li>
+	    	</ul>
+		</div>	
+		<div class="col s10">
+			 <table class="highlight" style=" background-color: white;">
+                <tr class="orange accent-4 white-text">
+                    <td>Naam</td>
+                    <td>Product</td>
+                    <td>Aantal</td>
+                    <td>Afhaaldatum</td>
+                    <td>Inleverdatum</td>
+                    <td>Werknemer</td>
+                </tr>
+			<?php require_once('overzichttabel.php'); ?>
+		</div>
+	</div>
 </body>
 </html>

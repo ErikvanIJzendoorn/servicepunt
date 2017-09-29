@@ -23,7 +23,7 @@ try{
                 header("Location: http://localhost/servicepunt/includes/beheerder/overview.php");
             }
             else{
-                $_SESSION['username'] = $row['gebruikersnaam']; 
+                $_SESSION['id'] = $row['id']; 
                 header("Location: http://localhost/servicepunt/includes/werknemer/overview.php");
             }
 
